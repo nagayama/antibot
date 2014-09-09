@@ -21,3 +21,6 @@ module.exports = (robot) ->
   robot.hear /^twimg (.+)/, (msg) ->
     q = msg.match[1]
     search_twitter msg, "filter:images #{q.trim()}", (tweet) -> tweet.entities.media[0].media_url
+
+  robot.hear /^(ぞい|zoi)/, (msg) ->
+    msg.send "antibot zoi"
