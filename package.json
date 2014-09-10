@@ -27,7 +27,8 @@
     "hubot-alias": "~0.1.6",
     "hubot-cron": "~0.2.5",
     "hubot-ifttt": "https://github.com/nagayama/hubot-ifttt/archive/master.tar.gz",
-    "twit": "~1.1.18"
+    "twit": "~1.1.18",
+    "hubot-regex": "0.0.3"
   },
   "engines": {
     "node": ">= 0.8.x",
