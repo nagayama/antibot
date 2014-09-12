@@ -27,3 +27,28 @@ module.exports = (robot) ->
         message = JSON.parse(body)
         msg.send ":naoya: " + message.result
 
+
+  robot.hear /^まるこふ\s+add\s+(.+)/, (msg) ->
+    q = msg.match[1]
+    url = "http://mcg.herokuapp.com/#{q}/json"
+    msg.http(url).get() (err, res, body) ->
+      message = JSON.parse(body)
+      if message.result
+        hash = robot.brain.get("hash")
+        if hash && hash.indexOf q > -1
+          hash.push(q)
+          robot.brain.set("hash", hash)
+        else
+          hash = [q]
+          robot.brain.set("hash", hash)
+        msg.send "I memorized #{url}"
+
+  robot.hear /^まるこふ$/, (msg) ->
+    hash = robot.brain.get("hash")
+    if hash
+      hash1 = msg.random hash
+      hash2 = msg.random hash
+      url  = "http://mcg.herokuapp.com/#{hash1}/#{hash2}/json"
+      msg.http(url).get() (err, res, body) ->
+        message = JSON.parse(body)
+        msg.send message.result
