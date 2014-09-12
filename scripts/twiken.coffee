@@ -14,13 +14,16 @@ module.exports = (robot) ->
       tweet = msg.random data.statuses
       msg.send cb(tweet)
 
-  robot.respond /miyagawa/, (msg) ->
-    q = msg.match[1]
-    search_twitter msg, "from:miyagawa filter:images", (tweet) -> ":miyagawa: #{tweet.text}\n#{tweet.entities.media[0].media_url}"
-
   robot.hear /^twimg (.+)/, (msg) ->
     q = msg.match[1]
     search_twitter msg, "filter:images #{q.trim()}", (tweet) -> tweet.entities.media[0].media_url
 
   robot.hear /^(ぞい|zoi)/, (msg) ->
     msg.send "antibot zoi"
+
+  robot.respond /naoya/, (msg) ->
+    msg.http('http://mcg.herokuapp.com/e3e01cbc0bfcc637bf4d734cbea7d795/json')
+      .get() (err, res, body) ->
+        message = JSON.parse(body)
+        msg.send ":naoya: " + message.result
+
