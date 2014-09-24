@@ -20,7 +20,7 @@ module.exports = (robot) ->
 
         msg.send resp
 
-  robot.hear /(.+)の株価/, (msg) ->
+  robot.hear /(.+)の株くれ/, (msg) ->
     msg
       .http("https://www.googleapis.com/customsearch/v1")
       .query
