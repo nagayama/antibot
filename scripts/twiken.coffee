@@ -1,3 +1,5 @@
+dotenv = require('dotenv')
+dotenv.load()
 Twit = require('twit')
 
 module.exports = (robot) ->
@@ -18,8 +20,21 @@ module.exports = (robot) ->
     q = msg.match[1]
     search_twitter msg, "filter:images #{q.trim()}", (tweet) -> tweet.entities.media[0].media_url
 
-  robot.hear /^(ぞい|zoi)/, (msg) ->
+  robot.hear /^(ぞい)/, (msg) ->
     msg.send "antibot zoi"
+
+  robot.hear /^zoi(\s+(http.+))?/, (msg) ->
+    url = msg.match[2]
+    list = robot.brain.get("list") ? []
+    if url
+      msg.http(url).get() (err, res, body) ->
+        if !err && res.headers["content-type"].match(/^image/)
+          list.push url
+          list = list.filter (x, i, self) ->
+            self.indexOf(x) == i
+          robot.brain.set("list", list)
+    else
+      msg.send msg.random list
 
   robot.respond /naoya/, (msg) ->
     msg.http('http://mcg.herokuapp.com/e3e01cbc0bfcc637bf4d734cbea7d795/json')
