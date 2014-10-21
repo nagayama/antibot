@@ -28,7 +28,10 @@ module.exports = (robot) ->
       "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
       "https://pbs.twimg.com/media/BzW8zUACQAEO9Ez.jpg:large",
       "https://pbs.twimg.com/media/B0WdRD4CEAEdv1X.png:large",
-      "http://pbs.twimg.com/media/Bw2Sy83IMAAfZEY.jpg"
+      "https://pbs.twimg.com/media/B0WfedGCcAEwl4B.png:large",
+      "http://i.imgur.com/6grf9qK.jpg",
+      "https://pbs.twimg.com/media/B0Wr2MlCQAEMLqR.jpg:large",
+      "https://pbs.twimg.com/media/ByM9grRCUAA5RYM.jpg"
     ]
     msg.send msg.random list
 
