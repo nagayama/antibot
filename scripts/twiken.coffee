@@ -23,6 +23,15 @@ module.exports = (robot) ->
   robot.hear /^(ぞい)/, (msg) ->
     msg.send "antibot zoi"
 
+  robot.hear /^(H|えっち)なぞい/, (msg) ->
+    list = [
+      "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
+      "https://pbs.twimg.com/media/BzW8zUACQAEO9Ez.jpg:large",
+      "https://pbs.twimg.com/media/B0WdRD4CEAEdv1X.png:large",
+      "http://pbs.twimg.com/media/Bw2Sy83IMAAfZEY.jpg"
+    ]
+    msg.send msg.random list
+
   robot.hear /^zoi(\s+(http.+))?/, (msg) ->
     url = msg.match[2]
     list = robot.brain.get("list") ? []
