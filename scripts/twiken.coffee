@@ -31,6 +31,8 @@ module.exports = (robot) ->
       "https://pbs.twimg.com/media/B0WfedGCcAEwl4B.png:large",
       "http://i.imgur.com/6grf9qK.jpg",
       "https://pbs.twimg.com/media/B0Wr2MlCQAEMLqR.jpg:large",
+      "http://33.media.tumblr.com/daa079c5164d11ca37c25eb766de9de3/tumblr_ndtv1bLZ3A1qd1ozgo1_1280.jpg",
+      "https://pbs.twimg.com/media/B0WkBIBCIAIfJq4.jpg:large",
       "https://pbs.twimg.com/media/ByM9grRCUAA5RYM.jpg"
     ]
     msg.send msg.random list
