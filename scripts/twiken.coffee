@@ -23,6 +23,9 @@ module.exports = (robot) ->
   robot.hear /^(ぞい)/, (msg) ->
     msg.send "antibot zoi"
 
+  robot.hear /^(まゆゆ|まゆつば|歳納京子)/, (msg) ->
+    msg.send "https://dl.dropboxusercontent.com/u/980764/halloween_mayutsuba/mayutsuba.png"
+
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
       "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
