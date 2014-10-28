@@ -30,7 +30,8 @@
     "twit": "~1.1.18",
     "hubot-regex": "0.0.3",
     "dotenv": "0.4.0",
-    "hubot-pusheen": "0.0.1"
+    "hubot-pusheen": "0.0.1",
+    "cheerio": "~0.17.0"
   },
   "engines": {
     "node": ">= 0.8.x",
