@@ -30,7 +30,11 @@ module.exports = (robot) ->
     q = msg.match[1]
     msg.message.username   = "mayutsuba"
     msg.message.icon_emoji = ":mayutsuba:"
-    msg.custom text:q
+    payload =
+      message: msg.message
+      content:
+        text: q
+    robot.emit 'slack-attachment', payload
 
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
