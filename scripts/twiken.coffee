@@ -30,7 +30,7 @@ module.exports = (robot) ->
     q = msg.match[1]
     msg.message.username   = "mayutsuba"
     msg.message.icon_emoji = ":mayutsuba:"
-    msg.custom {text:q}
+    msg.custom text:q
 
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
