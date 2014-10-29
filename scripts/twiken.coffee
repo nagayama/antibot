@@ -26,16 +26,6 @@ module.exports = (robot) ->
   robot.hear /^(まゆゆ|まゆつば|歳納京子)/, (msg) ->
     msg.send "https://dl.dropboxusercontent.com/u/980764/halloween_mayutsuba/mayutsuba.png"
 
-  robot.hear /^mayutsuba\s+(.+)/, (msg) ->
-    q = msg.match[1]
-    payload = JSON.stringify
-      channel: "#" + process.env.HUBOT_SLACK_TEAM,
-      username: "mayutsuba",
-      text: q,
-      icon_emoji: ":mayutsuba:"
-
-    msg.http(process.env.SLACK_WEBHOOK_URL).post(payload)
-
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
       "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
