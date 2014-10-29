@@ -28,13 +28,13 @@ module.exports = (robot) ->
 
   robot.hear /^mayutsuba\s+(.+)/, (msg) ->
     q = msg.match[1]
-    msg.message.username   = "mayutsuba"
-    msg.message.icon_emoji = ":mayutsuba:"
-    payload =
-      message: msg.message
-      content:
-        text: q
-    robot.emit 'slack-attachment', payload
+    payload = JSON.stringify
+      channel: "#" + (msg.message.reply_to || msg.message.room),
+      username: "mayutsuba",
+      text: q,
+      icon_emoji: ":mayutsuba:"
+
+    msg.http(process.env.SLACK_WEBHOOK_URL).post(payload)
 
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
