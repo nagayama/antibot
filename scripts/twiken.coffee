@@ -29,7 +29,7 @@ module.exports = (robot) ->
   robot.hear /^mayutsuba\s+(.+)/, (msg) ->
     q = msg.match[1]
     payload = JSON.stringify
-      channel: "#" + (msg.message.reply_to || msg.message.room),
+      channel: "#" + process.env.HUBOT_SLACK_TEAM,
       username: "mayutsuba",
       text: q,
       icon_emoji: ":mayutsuba:"
