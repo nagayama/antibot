@@ -27,7 +27,7 @@ module.exports = (robot) ->
     msg.send "https://dl.dropboxusercontent.com/u/980764/halloween_mayutsuba/mayutsuba.png"
 
   robot.hear /^くず/, (msg) ->
-    msg.send "https://www.dropbox.com/s/rgvtvmawpdjvo54/8f4055d1-1b94-4010-86d0-5048713624fd.jpg"
+    msg.send "https://www.dropbox.com/s/rgvtvmawpdjvo54/8f4055d1-1b94-4010-86d0-5048713624fd.jpg?dl=1"
 
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
