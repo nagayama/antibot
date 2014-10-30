@@ -26,6 +26,9 @@ module.exports = (robot) ->
   robot.hear /^(まゆゆ|まゆつば|歳納京子)/, (msg) ->
     msg.send "https://dl.dropboxusercontent.com/u/980764/halloween_mayutsuba/mayutsuba.png"
 
+  robot.hear /^くず/, (msg) ->
+    msg.send "https://www.dropbox.com/s/rgvtvmawpdjvo54/8f4055d1-1b94-4010-86d0-5048713624fd.jpg"
+
   robot.hear /^(H|えっち)なぞい/, (msg) ->
     list = [
       "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
