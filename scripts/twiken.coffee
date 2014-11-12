@@ -40,7 +40,7 @@ module.exports = (robot) ->
       "http://33.media.tumblr.com/daa079c5164d11ca37c25eb766de9de3/tumblr_ndtv1bLZ3A1qd1ozgo1_1280.jpg",
       "https://pbs.twimg.com/media/B0WkBIBCIAIfJq4.jpg:large",
       "http://htn.to/motemen",
-      "https://pbs.twimg.com/media/ByM9grRCUAA5RYM.jpg"
+      "https://pbs.twimg.com/media/ByM9grRCUAA5RYM.jpg",
       "http://31.media.tumblr.com/d0ee0fe7bd6e9325bb5170d979f73aac/tumblr_napeh8twhR1qbwsi4o1_500.png"
     ]
     msg.send msg.random list
