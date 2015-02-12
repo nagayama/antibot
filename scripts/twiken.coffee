@@ -30,20 +30,10 @@ module.exports = (robot) ->
     msg.send "https://www.dropbox.com/s/rgvtvmawpdjvo54/8f4055d1-1b94-4010-86d0-5048713624fd.jpg?dl=1"
 
   robot.hear /^(H|えっち)なぞい/, (msg) ->
-    list = [
-      "https://pbs.twimg.com/media/BtpKHsIIMAAVBOH.jpg:large",
-      "https://pbs.twimg.com/media/BzW8zUACQAEO9Ez.jpg:large",
-      "https://pbs.twimg.com/media/B0WdRD4CEAEdv1X.png:large",
-      "https://pbs.twimg.com/media/B0WfedGCcAEwl4B.png:large",
-      "http://i.imgur.com/6grf9qK.jpg",
-      "https://pbs.twimg.com/media/B0Wr2MlCQAEMLqR.jpg:large",
-      "http://33.media.tumblr.com/daa079c5164d11ca37c25eb766de9de3/tumblr_ndtv1bLZ3A1qd1ozgo1_1280.jpg",
-      "https://pbs.twimg.com/media/B0WkBIBCIAIfJq4.jpg:large",
-      "http://htn.to/motemen",
-      "https://pbs.twimg.com/media/ByM9grRCUAA5RYM.jpg",
-      "http://31.media.tumblr.com/d0ee0fe7bd6e9325bb5170d979f73aac/tumblr_napeh8twhR1qbwsi4o1_500.png"
-    ]
-    msg.send msg.random list
+    msg.http('https://raw.githubusercontent.com/wiki/nagayama/antibot/zoi.md')
+      .get() (err, res, body) ->
+        list = JSON.parse(body)
+        msg.send msg.random list
 
   robot.hear /^zoi(\s+(http.+))?/, (msg) ->
     url = msg.match[2]
