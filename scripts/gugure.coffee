@@ -28,7 +28,7 @@ module.exports = (robot) ->
         cx:  process.env.HUBOT_GOOGLE_SEARCH_CX
         fields: "items(title,link)"
         num: 3
-        q: "#{msg.match[1]} 株価"
+        q: "#{msg.match[1]} 株価 yahoo"
       .get() (err, res, body) ->
         results = JSON.parse(body)
         if results.error
