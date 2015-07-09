@@ -36,7 +36,7 @@ module.exports = (robot) ->
             msg.send err.message
         else
           results.items.some (item) ->
-            match = item.link.match(/(\d{4})/)
+            match = item.link.match(/(\d{4,6})/)
             if match
               msg.send "http://chart.yahoo.co.jp/?code=#{match[1]}.T&tm=1y&type=c&log=off&size=m&over=m65,m130,s&add=v&comp="
               return true
